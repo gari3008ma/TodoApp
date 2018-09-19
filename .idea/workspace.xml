@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08f77ca0-755a-4f06-81bb-16d91a392f88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/todos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/todos/templates/partials/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +169,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-45">
               <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -188,11 +186,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todos/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -393,12 +388,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27091634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32972136" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -408,7 +404,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.42391303" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.42391303" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32972136" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -655,21 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todos/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1537342286196" expanded="true" signature="679:680" ph="..." />
-            <marker date="1537342286196" expanded="true" signature="1076:1077" ph="..." />
-            <marker date="1537342286196" expanded="true" signature="1216:1220" ph="..." />
-            <marker date="1537342286196" expanded="true" signature="2578:3176" ph="..." />
-            <marker date="1537342286196" expanded="true" signature="3232:3233" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todos/templates/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -697,13 +678,25 @@
     <entry file="file://$PROJECT_DIR$/todos/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/todos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1537342286196" expanded="true" signature="679:680" ph="..." />
+            <marker date="1537342286196" expanded="true" signature="1076:1077" ph="..." />
+            <marker date="1537342286196" expanded="true" signature="1216:1220" ph="..." />
+            <marker date="1537342286196" expanded="true" signature="2578:3176" ph="..." />
+            <marker date="1537342286196" expanded="true" signature="3232:3233" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/todos/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
