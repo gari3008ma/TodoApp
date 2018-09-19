@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <form method="POST" >
+        {% csrf_token %}
+        <p>
+            <label>Username</label>
+            <input type="text" name="username">
+        </p>
+        <p>
+            <label>Password</label>
+            <input type="password" name="password">
+        </p>
+        <button type="submit" formaction="/todos/login/?next=/todos/dashboard/">Login</button>
+
+        <div>
+        <span><a href="{% url 'signup' %}"> Registration</a></span>
+        </div>
+    </form>
+</body>
+</html>

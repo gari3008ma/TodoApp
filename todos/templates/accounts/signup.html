@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TodoApp</title>
+    </head>
+
+    <body>
+        <h1>Register on TODOAPP</h1>
+
+        {% if registered %}
+        APP says: <strong>thank you for registering!</strong>
+        <a href="/todos/login/">Return to the loginPage.</a><br />
+        {% else %}
+        APP says: <strong>register here!</strong><br />
+        <form id="user_form" method="post" action="/todos/registration/"
+                enctype="multipart/form-data">
+                    {% csrf_token %}
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ user_form.as_p }}
+            <!-- Provide a button to click to submit the form. -->
+                    <button type="submit" formaction="/todos/registration/">Register</button>
+        </form>
+        {% endif %}
+    </body>
+</html>
