@@ -2,7 +2,7 @@
 <form action="{% url 'add' %}" method="post">
 {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Submit" />
+    <button type="submit">AddTodo</button>
 </form>
 <br>
 <a href="/todos/dashboard/">Go Back</a>

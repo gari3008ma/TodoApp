@@ -65,7 +65,7 @@ def add(request):
             created_by = UserProfile.objects.get(user=request.user)
             assigned_to = form.cleaned_data['assigned_to']
             deadline = form.cleaned_data['deadline']
-            todo = Todo(title=title, text=text, created_by_id=created_by.id, assigned_to=assigned_to, deadline=deadline)
+            todo = Todo(title=title, text=text, created_by_id=created_by.id, deadline=deadline)
             todo.save()
             return HttpResponseRedirect('/todos/dashboard/')
 
