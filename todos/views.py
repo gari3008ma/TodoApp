@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.core.urlresolvers import reverse
-from .models import Todo,Domain,UserProfile
+from .models import Todo, Domain, UserProfile
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
@@ -62,8 +62,10 @@ def add(request):
         if form.is_valid():
             title = form.cleaned_data['title']
             text = form.cleaned_data['text']
-            created_by = form.cleaned_data['created_by']
-            todo = Todo(title=title, text=text, created_by_id=created_by.id)
+            created_by = UserProfile.objects.get(user=request.user)
+            assigned_to = form.cleaned_data['assigned_to']
+            deadline = form.cleaned_data['deadline']
+            todo = Todo(title=title, text=text, created_by_id=created_by.id, assigned_to=assigned_to, deadline=deadline)
             todo.save()
             return HttpResponseRedirect('/todos/dashboard/')
 
