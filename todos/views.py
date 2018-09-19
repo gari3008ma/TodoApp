@@ -14,6 +14,7 @@ from .forms import TodoForm
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+
 def home(request):
     return render(request, 'base.html')
 
@@ -28,6 +29,7 @@ def login(request):
         return redirect('/todos/dashboard')
     else:
         return redirect('/todos/login')
+
 
 @login_required
 def index(request):
@@ -45,6 +47,7 @@ def index(request):
         return render(request, 'index.html', context)
 
 
+@login_required
 def details(request, id):
     todo = Todo.objects.get(id=id)
 
@@ -54,25 +57,25 @@ def details(request, id):
     return render(request, 'details.html', context)
 
 
+@login_required
 def add(request):
     user1 = UserProfile.objects.get(user=request.user)
-    domain= user1.domain
+    domain = user1.domain
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = TodoForm(domain,request.POST)
+        form = TodoForm(domain, request.POST)
         # check whether it's valid:
         if form.is_valid():
-            title = form.cleaned_data['title']
-            text = form.cleaned_data['text']
+            # title = form.cleaned_data['title']
+            # text = form.cleaned_data['text']
             created_by = UserProfile.objects.get(user=request.user)
             assigned_to = form.cleaned_data['assigned_to']
-            assigned_to = assigned_to.split('@')[1]
-            user = UserProfile.objects.get(domain=assigned_to)
-            print user
-            deadline = form.cleaned_data['deadline']
+            user = UserProfile.objects.get(user=assigned_to.user)
+            # deadline = form.cleaned_data['deadline']
+            #value = form.save()
+            #print value
             if user and user.domain == created_by.domain:
-                todo = Todo(title=title, text=text, created_by_id=created_by.id, deadline=deadline)
-                todo.save()
+                form.save()
 
         return HttpResponseRedirect('/todos/dashboard/')
 

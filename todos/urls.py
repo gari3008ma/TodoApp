@@ -10,6 +10,6 @@ urlpatterns = [
     url(r'^registration/$', views.signup, name='signup'),
     url(r'^dashboard/$', views.index, name='index'),
     url(r'^details/(?P<id>\w{0,50})/$', views.details),
-    url(r'^logout', auth_views.logout, {'next_page':'/todos/login/'}, name='logout'),
+    url(r'^logout', auth_views.logout, {'next_page': '/todos/login/'}, name='logout'),
     url(r'^add', views.add, name='add')
 ]

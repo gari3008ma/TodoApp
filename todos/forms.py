@@ -8,7 +8,7 @@ class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = '__all__'
-        exclude = ['created_by', 'created_at']
+        exclude = ['created_at', 'created_by']
 
     def __init__(self, domain, *args, **kwargs):
         super(TodoForm, self).__init__(*args, **kwargs)
