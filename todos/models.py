@@ -10,6 +10,9 @@ class UserProfile(models.Model):
     is_approved = models.BooleanField(default=False)
     is_domain_admin = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.user.username
+
 
 class Todo(models.Model):
     title = models.CharField(max_length=200)
@@ -19,6 +22,7 @@ class Todo(models.Model):
     assigned_to = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null= True, related_name='assigned_tasks')
     status = models.BooleanField(default=False)
     deadline = models.DateTimeField(blank=True,default=datetime.now)
+
     def __str__(self):
         return self.title
 

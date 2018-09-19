@@ -55,23 +55,30 @@ def details(request, id):
 
 
 def add(request):
+    user1 = UserProfile.objects.get(user=request.user)
+    domain= user1.domain
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = TodoForm(request.POST)
+        form = TodoForm(domain,request.POST)
         # check whether it's valid:
         if form.is_valid():
             title = form.cleaned_data['title']
             text = form.cleaned_data['text']
             created_by = UserProfile.objects.get(user=request.user)
             assigned_to = form.cleaned_data['assigned_to']
+            assigned_to = assigned_to.split('@')[1]
+            user = UserProfile.objects.get(domain=assigned_to)
+            print user
             deadline = form.cleaned_data['deadline']
-            todo = Todo(title=title, text=text, created_by_id=created_by.id, deadline=deadline)
-            todo.save()
-            return HttpResponseRedirect('/todos/dashboard/')
+            if user and user.domain == created_by.domain:
+                todo = Todo(title=title, text=text, created_by_id=created_by.id, deadline=deadline)
+                todo.save()
+
+        return HttpResponseRedirect('/todos/dashboard/')
 
         # if a GET (or any other method) we'll create a blank form
     else:
-        form = TodoForm()
+        form = TodoForm(domain)
 
     return render(request, 'add.html', {'form': form})
 
